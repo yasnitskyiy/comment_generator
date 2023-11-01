@@ -1,0 +1,45 @@
+{% load sass_tags %}<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        {% load static %}
+        <link rel="icon" href="{% static 'images/icon.png' %}">
+        <link href="{% sass_src 'css/main.scss' %}" rel="stylesheet" type="text/css"/>
+        <link href="{% sass_src 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css"/>
+
+        {% block links %}
+        {% endblock %}
+
+        <title>Comment Generator</title>
+    </head>
+    <body class="d-flex flex-column justify-content-between min-vh-100">
+
+        <header class="p-2 text-bg-dark">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-sm-between justify-content-around">
+                <a href="/">
+                    {% load static %}
+                    <img id="logo" src="{% static 'images/logo.png' %}" alt="My image">
+                </a>
+
+                <div class="text-end">
+                    <a href="/login/"><button type="button" class="btn btn-outline-light me-2">Login</button></a>
+                    <a href="/register/"><button type="button" class="btn btn-primary">Sign-up</button></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    {% block content %}
+    {% endblock %}
+
+    <footer class="p-2 text-bg-dark">
+        <div class="container">
+            <h1>footer</h1>
+        </div>
+    </footer>
+
+    </body>
+<html>
